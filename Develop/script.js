@@ -4,6 +4,18 @@ var alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 var specialCharacters = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "\\","|", ";", ":", "'", "\"", ",", "<", ".", ">", "/", "?"]
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 
+function generatePassword() {
+  let password = ""
+  let passwordArray = []
+  let passwordLength = prompt("How long would you like your password to be?")
+  let passwordLower = confirm("Would you like to include lowercase letters?")
+  let passwordUpper = confirm("Would you like to include uppercase letters?")
+  let passwordSpecial = confirm("Would you like to include special characters?")
+  let passwordNumbers = confirm ("Would you like to include numbers?")
+  
+  return password
+}
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
