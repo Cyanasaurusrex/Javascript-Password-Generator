@@ -11,8 +11,14 @@ function generatePassword() {
   let password = ""
   let passwordArray = []
 
-  // Prompts user for password characteristics
-  let passwordLength = prompt("How long would you like your password to be?")
+  // Sets password length to zero and keeps asking user for a
+  // password length until they enter one within the range provided
+  let passwordLength = 0  
+  while (passwordLength < 8 || passwordLength > 128) {
+    passwordLength = prompt("Passwords must be between 8 and 128 characters.\nHow long would you like your password to be?")
+  }
+  
+  // Prompts user for password character inclusions
   let passwordLower = confirm("Would you like to include lowercase letters?")
   let passwordUpper = confirm("Would you like to include uppercase letters?")
   let passwordSpecial = confirm("Would you like to include special characters?")
@@ -30,6 +36,12 @@ function generatePassword() {
   }
   if (passwordNumbers == true) {
     passwordArray = passwordArray.concat(numbers)
+  }
+
+  // If no characters were selected, return an empty string and ask user to try again.
+  if (passwordArray.length == 0) {
+    alert("You have selected no characters for your password.\nPlease select characters to include in your password next time.")
+    return ""
   }
 
   // Cycles through password, adding a random character each cycle
