@@ -12,6 +12,19 @@ function generatePassword() {
   let passwordUpper = confirm("Would you like to include uppercase letters?")
   let passwordSpecial = confirm("Would you like to include special characters?")
   let passwordNumbers = confirm ("Would you like to include numbers?")
+  if (passwordLower == true) {
+    passwordArray = passwordArray.concat(alphabetLower)
+  }
+  if (passwordUpper == true) {
+    passwordArray = passwordArray.concat(alphabetUpper)
+  }
+  if (passwordSpecial == true) {
+    passwordArray = passwordArray.concat(specialCharacters)
+  }
+  if (passwordNumbers == true) {
+    passwordArray = passwordArray.concat(numbers)
+  }
+  console.log(passwordArray)
   
   return password
 }
